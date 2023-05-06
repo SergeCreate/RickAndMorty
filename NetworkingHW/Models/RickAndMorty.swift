@@ -1,5 +1,5 @@
 //
-//  RickAndMirty.swift
+//  RickAndMorty.swift
 //  NetworkingHW
 //
 //  Created by Сергей Захаров on 06.05.2023.
