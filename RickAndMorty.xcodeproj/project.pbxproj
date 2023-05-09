@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4B7024942A0697E900607626 /* NetworkingHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7024942A0697E900607626 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7024972A0697E900607626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B7024992A0697E900607626 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4B70249B2A0697E900607626 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		4B70248B2A0697E900607626 = {
 			isa = PBXGroup;
 			children = (
-				4B7024962A0697E900607626 /* NetworkingHW */,
+				4B7024962A0697E900607626 /* RickAndMorty */,
 				4B7024952A0697E900607626 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		4B7024952A0697E900607626 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B7024942A0697E900607626 /* NetworkingHW.app */,
+				4B7024942A0697E900607626 /* RickAndMorty.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4B7024962A0697E900607626 /* NetworkingHW */ = {
+		4B7024962A0697E900607626 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
 				4B7024AF2A06985F00607626 /* Models */,
@@ -64,7 +64,7 @@
 				4B7024AB2A06980600607626 /* App */,
 				4B7024AD2A06982C00607626 /* Recources */,
 			);
-			path = NetworkingHW;
+			path = RickAndMorty;
 			sourceTree = "<group>";
 		};
 		4B7024AB2A06980600607626 /* App */ = {
@@ -113,9 +113,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B7024932A0697E900607626 /* NetworkingHW */ = {
+		4B7024932A0697E900607626 /* RickAndMorty */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B7024A82A0697EA00607626 /* Build configuration list for PBXNativeTarget "NetworkingHW" */;
+			buildConfigurationList = 4B7024A82A0697EA00607626 /* Build configuration list for PBXNativeTarget "RickAndMorty" */;
 			buildPhases = (
 				4B7024902A0697E900607626 /* Sources */,
 				4B7024912A0697E900607626 /* Frameworks */,
@@ -125,9 +125,9 @@
 			);
 			dependencies = (
 			);
-			name = NetworkingHW;
+			name = RickAndMorty;
 			productName = NetworkingHW;
-			productReference = 4B7024942A0697E900607626 /* NetworkingHW.app */;
+			productReference = 4B7024942A0697E900607626 /* RickAndMorty.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -145,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4B70248F2A0697E900607626 /* Build configuration list for PBXProject "NetworkingHW" */;
+			buildConfigurationList = 4B70248F2A0697E900607626 /* Build configuration list for PBXProject "RickAndMorty" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -158,7 +158,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B7024932A0697E900607626 /* NetworkingHW */,
+				4B7024932A0697E900607626 /* RickAndMorty */,
 			);
 		};
 /* End PBXProject section */
@@ -333,7 +333,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 73AU25U66T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkingHW/App/Info.plist;
+				INFOPLIST_FILE = RickAndMorty/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -364,7 +364,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 73AU25U66T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkingHW/App/Info.plist;
+				INFOPLIST_FILE = RickAndMorty/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -389,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B70248F2A0697E900607626 /* Build configuration list for PBXProject "NetworkingHW" */ = {
+		4B70248F2A0697E900607626 /* Build configuration list for PBXProject "RickAndMorty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B7024A62A0697EA00607626 /* Debug */,
@@ -398,7 +398,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B7024A82A0697EA00607626 /* Build configuration list for PBXNativeTarget "NetworkingHW" */ = {
+		4B7024A82A0697EA00607626 /* Build configuration list for PBXNativeTarget "RickAndMorty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B7024A92A0697EA00607626 /* Debug */,
