@@ -45,7 +45,7 @@ final class NetworkManager {
                 print(error?.localizedDescription ?? "No error description")
                 return
             }
-                
+            
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase

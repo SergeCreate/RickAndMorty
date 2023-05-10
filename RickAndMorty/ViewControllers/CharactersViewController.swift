@@ -10,11 +10,15 @@ import UIKit
 final class CharactersViewController: UITableViewController {
     
     private var characters: [Character] = []
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.08704253286, green: 0.6926050782, blue: 0.5707834363, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Noteworthy-Bold", size: 30)!]
-
+        if let noteworthyBoldFont = UIFont(name: "Noteworthy-Bold", size: 20) {
+            self.navigationController?.navigationBar.titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.08704253286, green: 0.6926050782, blue: 0.5707834363, alpha: 1),
+                NSAttributedString.Key.font: noteworthyBoldFont
+            ]
+        }
         
         let urlString = "https://rickandmortyapi.com/api/character"
         NetworkManager.shared.fetch(CharacterResponse.self, from: urlString) { [weak self] result in
@@ -45,6 +49,6 @@ final class CharactersViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
 }
 
