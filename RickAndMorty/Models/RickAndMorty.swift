@@ -1,6 +1,6 @@
 //
 //  RickAndMorty.swift
-//  NetworkingHW
+//  RickAndMorty
 //
 //  Created by Сергей Захаров on 06.05.2023.
 //
