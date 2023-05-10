@@ -14,9 +14,14 @@ class CharacterCell: UITableViewCell {
     
     private let netWorkManager = NetworkManager.shared
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        characterImage.layer.cornerRadius = min(characterImage.bounds.width, characterImage.bounds.height) / 2
+    }
+    
     func configure(with character: Character) {
         nameLabel.text = character.name
-
+        
         netWorkManager.fetchImage(from: character.image) { [weak self] result in
             switch result {
             case .success(let imageData):
