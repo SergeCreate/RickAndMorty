@@ -3,6 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +15,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="ehL-yS-XO1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.066605143249034882" green="0.12943395972251892" blue="0.2413642406463623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98394232988357544" green="0.89618617296218872" blue="0.019561300054192543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="characterCell" rowHeight="131" id="y68-hD-fFM" customClass="CharacterCell" customModule="RickAndMorty" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="320" height="131"/>
@@ -63,10 +64,62 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Rick and Morty" id="aA4-aD-l5z"/>
+                    <connections>
+                        <segue destination="MSn-Nj-wj2" kind="show" identifier="showDetail" id="fk3-Bg-qvA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pv-Pb-Ga7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13.125" y="72.887323943661968"/>
+        </scene>
+        <!--Character Details View Controller-->
+        <scene sceneID="Thi-f8-Bgb">
+            <objects>
+                <viewController storyboardIdentifier="showDetail" id="MSn-Nj-wj2" customClass="CharacterDetailsViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WL3-2K-unS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E5g-xD-f5K">
+                                <rect key="frame" x="40" y="80" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="KSX-qe-xbQ"/>
+                                    <constraint firstAttribute="height" constant="240" id="OBg-v8-4WN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM7-lt-IdE">
+                                <rect key="frame" x="16" y="343" width="37" height="27"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" red="0.37647059560000001" green="0.80000001190000003" blue="0.8156862855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="16" name="Noteworthy-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.96064144372940063" green="0.72566801309585571" blue="0.028888750821352005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="0.98394232988357544" green="0.89618617296218872" blue="0.019561300054192543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NJS-5p-SDT"/>
+                        <color key="backgroundColor" red="0.066605143249034882" green="0.12943395972251892" blue="0.2413642406463623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="E5g-xD-f5K" firstAttribute="top" secondItem="NJS-5p-SDT" secondAttribute="top" constant="16" id="4RB-LA-gHm"/>
+                            <constraint firstItem="NJS-5p-SDT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GM7-lt-IdE" secondAttribute="trailing" symbolic="YES" id="9C9-yJ-UBb"/>
+                            <constraint firstItem="GM7-lt-IdE" firstAttribute="top" secondItem="E5g-xD-f5K" secondAttribute="bottom" constant="23" id="XE1-HF-3HI"/>
+                            <constraint firstItem="GM7-lt-IdE" firstAttribute="leading" secondItem="NJS-5p-SDT" secondAttribute="leading" constant="16" id="ZHG-Lr-1zW"/>
+                            <constraint firstItem="E5g-xD-f5K" firstAttribute="centerX" secondItem="WL3-2K-unS" secondAttribute="centerX" id="saQ-f0-fI1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c5X-H0-ZY7"/>
+                    <connections>
+                        <outlet property="characterImageView" destination="E5g-xD-f5K" id="wMM-nA-hCn"/>
+                        <outlet property="descriptionLabel" destination="GM7-lt-IdE" id="CCT-gl-JhM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ndo-gt-zpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772.5" y="73.943661971830991"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zRT-0Z-t4h">
@@ -76,8 +129,8 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066605143249034882" green="0.12943395972251892" blue="0.2413642406463623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.44313728810000003" green="0.91764706370000004" blue="0.2823529541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.066605143249034882" green="0.12943395972251892" blue="0.2413642406463623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.98394232988357544" green="0.89618617296218872" blue="0.019561300054192543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.98394232988357544" green="0.89618617296218872" blue="0.019561300054192543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.30196079609999998" green="0.64313727620000005" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="textShadowColor" red="0.9989359974861145" green="0.98840969800949097" blue="0.0061154933646321297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
