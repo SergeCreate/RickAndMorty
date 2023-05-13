@@ -22,10 +22,17 @@ final class CharacterCell: UITableViewCell {
     func configure(with character: Character) {
         nameLabel.text = character.name
         
+        let loadingImageView = UIImageView(image: UIImage(named: "loading"))
+        loadingImageView.contentMode = .scaleAspectFit
+        loadingImageView.frame.size = CGSize(width: 200, height: 200)
+        loadingImageView.center = characterImage.center
+        characterImage.addSubview(loadingImageView)
+        
         netWorkManager.fetchImage(from: character.image) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.characterImage.image = UIImage(data: imageData)
+                loadingImageView.removeFromSuperview()
             case .failure(let error):
                 print(error)
             }

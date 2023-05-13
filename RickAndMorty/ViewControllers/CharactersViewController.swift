@@ -38,17 +38,18 @@ final class CharactersViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath)
-        guard let cell = cell as? CharacterCell else { return
-            UITableViewCell() }
+        guard let cell = cell as? CharacterCell else { return UITableViewCell() }
         let character = characters[indexPath.row]
         cell.configure(with: character)
         return cell
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let character = characters[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailsVC = storyboard.instantiateViewController(withIdentifier: "showDetail") as? CharacterDetailsViewController else { return }
+        detailsVC.character = character
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
-    
 }
 

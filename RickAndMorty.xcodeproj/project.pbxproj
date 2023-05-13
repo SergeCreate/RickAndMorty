@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0C520D2A0EC43C00F9DFCB /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C520C2A0EC43C00F9DFCB /* CharacterDetailsViewController.swift */; };
 		4B7024982A0697E900607626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7024972A0697E900607626 /* AppDelegate.swift */; };
 		4B70249A2A0697E900607626 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7024992A0697E900607626 /* SceneDelegate.swift */; };
 		4B70249C2A0697E900607626 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B70249B2A0697E900607626 /* CharactersViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0C520C2A0EC43C00F9DFCB /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		4B7024942A0697E900607626 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7024972A0697E900607626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B7024992A0697E900607626 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4B70249B2A0697E900607626 /* CharactersViewController.swift */,
+				4B0C520C2A0EC43C00F9DFCB /* CharacterDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0C520D2A0EC43C00F9DFCB /* CharacterDetailsViewController.swift in Sources */,
 				4B70249C2A0697E900607626 /* CharactersViewController.swift in Sources */,
 				4B7024982A0697E900607626 /* AppDelegate.swift in Sources */,
 				4B853C4F2A0ADC5200121D9D /* NetworkManager.swift in Sources */,
