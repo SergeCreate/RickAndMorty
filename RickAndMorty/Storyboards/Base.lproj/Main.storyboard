@@ -15,7 +15,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="ehL-yS-XO1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.98394232988357544" green="0.89618617296218872" blue="0.019561300054192543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.082352943720000002" green="0.1294117719" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="characterCell" rowHeight="131" id="y68-hD-fFM" customClass="CharacterCell" customModule="RickAndMorty" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="320" height="131"/>
@@ -88,12 +88,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM7-lt-IdE">
-                                <rect key="frame" x="16" y="343" width="37" height="27"/>
+                                <rect key="frame" x="16" y="343" width="55.5" height="39.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
                                             <color key="NSColor" red="0.37647059560000001" green="0.80000001190000003" blue="0.8156862855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="16" name="Noteworthy-Bold"/>
+                                            <font key="NSFont" size="24" name="Noteworthy-Bold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -130,9 +130,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.066605143249034882" green="0.12943395972251892" blue="0.2413642406463623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.32156863810000003" green="0.68627452850000004" blue="0.58039218189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.98394232988357544" green="0.89618617296218872" blue="0.019561300054192543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.082352943720000002" green="0.1294117719" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.30196079609999998" green="0.64313727620000005" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" red="0.37647059560000001" green="0.80000001190000003" blue="0.8156862855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="textShadowColor" red="0.9989359974861145" green="0.98840969800949097" blue="0.0061154933646321297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">

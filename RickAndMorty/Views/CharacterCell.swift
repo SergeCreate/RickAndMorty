@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 final class CharacterCell: UITableViewCell {
     
@@ -28,10 +29,11 @@ final class CharacterCell: UITableViewCell {
         loadingImageView.center = characterImage.center
         characterImage.addSubview(loadingImageView)
         
-        netWorkManager.fetchImage(from: character.image) { [weak self] result in
-            switch result {
-            case .success(let imageData):
-                self?.characterImage.image = UIImage(data: imageData)
+        AF.request(character.image).validate().responseData { [weak self] response in
+            switch response.result {
+            case .success(let data):
+                guard let image = UIImage(data: data) else { return }
+                self?.characterImage.image = image
                 loadingImageView.removeFromSuperview()
             case .failure(let error):
                 print(error)

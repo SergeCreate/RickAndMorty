@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum NetworkError: Error {
     case invalidURL
@@ -18,18 +19,18 @@ final class NetworkManager {
     
     private init() {}
     
-    func fetchImage(from urlString: String, complection: @escaping (Result<Data, NetworkError>) -> Void) {
+    func fetchImage(from urlString: String, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         guard let url = URL(string: urlString) else {
-            complection(.failure(.invalidURL))
+            completion(.failure(.invalidURL))
             return
         }
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else {
-                complection(.failure(.noData))
-                return
-            }
-            DispatchQueue.main.async {
-                complection(.success(imageData))
+        
+        AF.download(url).responseData { response in
+            switch response.result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(_):
+                completion(.failure(.noData))
             }
         }
     }
@@ -39,23 +40,21 @@ final class NetworkManager {
             completion(.failure(.invalidURL))
             return
         }
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                completion(.failure(.noData))
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let dataModel = try decoder.decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(dataModel))
+        
+        AF.request(url).responseJSON { response in
+            switch response.result {
+            case .success(let json):
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: json, options: [])
+                    let decoder = JSONDecoder()
+                    let result = try decoder.decode(T.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(.decodingError))
                 }
-            } catch {
+            case .failure(_):
                 completion(.failure(.decodingError))
             }
-        }.resume()
+        }
     }
 }

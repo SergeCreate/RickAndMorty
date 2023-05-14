@@ -12,7 +12,6 @@ struct CharacterResponse: Decodable {
 }
 
 struct Character: Decodable {
-    let id: Int
     let name: String
     let status: String
     let species: String
@@ -20,22 +19,48 @@ struct Character: Decodable {
     let gender: String
     let location: Location
     let image: String
-    let episode: [String]
-    let url: String
-    let created: String
     
     var description: String {
         """
-    Name: \(name)
-    Status: \(status)
-    Species: \(species)
-    Gender: \(gender)
-    Location: \(location.name)
-    """
+        Name: \(name)
+        Status: \(status)
+        Species: \(species)
+        Type: \(type)
+        Gender: \(gender)
+        Location: \(location.name)
+        """
+    }
+    
+    init?(json: [String: Any]) {
+        guard let name = json["name"] as? String,
+              let status = json["status"] as? String,
+              let species = json["species"] as? String,
+              let type = json["type"] as? String,
+              let gender = json["gender"] as? String,
+              let locationDict = json["location"] as? [String: Any],
+              let location = Location(json: locationDict),
+              let image = json["image"] as? String else {
+            return nil
+        }
+        
+        self.name = name
+        self.status = status
+        self.species = species
+        self.type = type
+        self.gender = gender
+        self.location = location
+        self.image = image
     }
 }
 
 struct Location: Decodable {
     let name: String
+    
+    init?(json: [String: Any]) {
+        guard let name = json["name"] as? String else {
+            return nil
+        }
+        
+        self.name = name
+    }
 }
-

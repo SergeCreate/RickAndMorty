@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Alamofire
 
-class CharacterDetailsViewController: UIViewController {
+final class CharacterDetailsViewController: UIViewController {
     
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var characterImageView: UIImageView! {
@@ -15,39 +16,24 @@ class CharacterDetailsViewController: UIViewController {
             characterImageView.layer.cornerRadius = characterImageView.frame.width / 2
         }
     }
-
+    
     var character: Character?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let character = character {
+            title = character.name
             descriptionLabel.text = character.description
-        }
-        
-        guard let character = character else {
-            return
-        }
-        
-        title = character.name
-        
-        NetworkManager.shared.fetchImage(from: character.image) { result in
-            switch result {
-            case .success(let imageData):
-                DispatchQueue.main.async {
-                    self.characterImageView.image = UIImage(data: imageData)
+            
+            AF.download(character.image).responseData { [weak self] response in
+                switch response.result {
+                case .success(let imageData):
+                    DispatchQueue.main.async {
+                        self?.characterImageView.image = UIImage(data: imageData)
+                    }
+                case .failure(let error):
+                    print("Error downloading character image: \(error)")
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        NetworkManager.shared.fetch(Character.self, from: character.url) { result in
-            switch result {
-            case .success(let character):
-                DispatchQueue.main.async {
-                    self.descriptionLabel.text = character.description
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
     }

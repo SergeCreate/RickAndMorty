@@ -1,11 +1,12 @@
 //
-//  CharactersTableViewController.swift
+//  CharactersViewController.swift
 //  RickAndMorty
 //
 //  Created by Сергей Захаров on 06.05.2023.
 //
 
 import UIKit
+import Alamofire
 
 final class CharactersViewController: UITableViewController {
     
@@ -13,7 +14,8 @@ final class CharactersViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let noteworthyBoldFont = UIFont(name: "Noteworthy-Bold", size: 20) {
+        navigationController?.navigationBar.barStyle = .black
+        if let noteworthyBoldFont = UIFont(name: "Noteworthy-Bold", size: 28) {
             self.navigationController?.navigationBar.titleTextAttributes = [
                 NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.08704253286, green: 0.6926050782, blue: 0.5707834363, alpha: 1),
                 NSAttributedString.Key.font: noteworthyBoldFont
@@ -21,10 +23,13 @@ final class CharactersViewController: UITableViewController {
         }
         
         let urlString = "https://rickandmortyapi.com/api/character"
-        NetworkManager.shared.fetch(CharacterResponse.self, from: urlString) { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.characters = response.results
+        
+        AF.request(urlString).validate().responseJSON { [weak self] response in
+            switch response.result {
+            case .success(let value):
+                guard let json = value as? [String: Any],
+                      let results = json["results"] as? [[String: Any]] else { return }
+                self?.characters = results.compactMap { Character(json: $0) }
                 self?.tableView.reloadData()
             case .failure(let error):
                 print(error)
@@ -52,4 +57,3 @@ final class CharactersViewController: UITableViewController {
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
-
