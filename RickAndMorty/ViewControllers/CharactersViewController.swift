@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//
 final class CharactersViewController: UITableViewController {
     
     private var characters: [Character] = []

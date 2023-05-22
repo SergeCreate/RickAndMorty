@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//
 final class CharacterCell: UITableViewCell {
     
     @IBOutlet var characterImage: UIImageView!

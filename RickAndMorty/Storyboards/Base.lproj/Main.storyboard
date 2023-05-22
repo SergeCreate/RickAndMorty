@@ -24,9 +24,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g3g-sv-lS3">
-                                            <rect key="frame" x="16" y="0.0" width="116" height="116"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVc-h7-8LU">
                                             <rect key="frame" x="158" y="50" width="41.5" height="30"/>
                                             <attributedString key="attributedText">
@@ -40,11 +37,14 @@
                                             <color key="highlightedColor" systemColor="systemYellowColor"/>
                                             <color key="shadowColor" red="0.99118441343307495" green="0.98065823316574097" blue="0.012174191884696484" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g3g-sv-lS3">
+                                            <rect key="frame" x="16" y="7" width="116" height="116"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="XVc-h7-8LU" firstAttribute="top" secondItem="nSV-L5-ero" secondAttribute="topMargin" constant="39" id="QRo-je-yWU"/>
-                                        <constraint firstItem="XVc-h7-8LU" firstAttribute="top" secondItem="g3g-sv-lS3" secondAttribute="top" constant="50" id="ZKx-bl-7E5"/>
-                                        <constraint firstItem="g3g-sv-lS3" firstAttribute="bottom" secondItem="nSV-L5-ero" secondAttribute="bottomMargin" constant="-4" id="ZdY-Pf-ZA9"/>
+                                        <constraint firstItem="XVc-h7-8LU" firstAttribute="top" secondItem="g3g-sv-lS3" secondAttribute="top" constant="43" id="ZKx-bl-7E5"/>
+                                        <constraint firstItem="g3g-sv-lS3" firstAttribute="bottom" secondItem="nSV-L5-ero" secondAttribute="bottomMargin" constant="3" id="ZdY-Pf-ZA9"/>
                                         <constraint firstItem="XVc-h7-8LU" firstAttribute="leading" secondItem="nSV-L5-ero" secondAttribute="leading" constant="158" id="Zeb-1U-A1h"/>
                                         <constraint firstItem="XVc-h7-8LU" firstAttribute="leading" secondItem="g3g-sv-lS3" secondAttribute="trailing" constant="26" id="dh0-jg-pzu"/>
                                         <constraint firstItem="g3g-sv-lS3" firstAttribute="leading" secondItem="nSV-L5-ero" secondAttribute="leadingMargin" id="l3t-4A-Sa6"/>

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//
 struct CharacterResponse: Decodable {
     let results: [Character]
 }
