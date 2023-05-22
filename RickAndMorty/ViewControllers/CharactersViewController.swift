@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import Alamofire
-
+// избавиться от фреймворка
 final class CharactersViewController: UITableViewController {
     
     private var characters: [Character] = []

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// убрать лишнее
 struct Character: Decodable {
     let name: String
     let status: String
